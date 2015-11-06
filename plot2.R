@@ -9,7 +9,7 @@ plot2 <- function(){
 	df <- df[df$timestamp >= as.POSIXlt("2007-02-01 00:00:00") & df$timestamp <= as.POSIXlt("2007-02-02 23:59:59"),]
 
 	# #coerce the column of interest to numeric
-	df$Global_active_power = as.numeric(df$Global_active_power)
+	df$Global_active_power  <- as.numeric(df$Global_active_power)
 	
 	plot(df$timestamp,df$Global_active_power, type = "l", ylab = "Global Active Power (kilowatts)",xlab="")
 	dev.copy(png, file = "plot2.png")
